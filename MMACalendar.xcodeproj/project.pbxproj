@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3829C7C726DDBDE66F049882 /* Pods_MMACalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3687DF10185048624BEC463 /* Pods_MMACalendar.framework */; };
 		F60C7278226D141300A180A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C7277226D141300A180A6 /* AppDelegate.swift */; };
 		F60C727A226D141300A180A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C7279226D141300A180A6 /* ViewController.swift */; };
 		F60C727D226D141300A180A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60C727B226D141300A180A6 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3687DF10185048624BEC463 /* Pods_MMACalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMACalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB17C7047A2FA3D1A98AEB1 /* Pods-MMACalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMACalendar.debug.xcconfig"; path = "Target Support Files/Pods-MMACalendar/Pods-MMACalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		E9EC4B58DEBD6F70A1364035 /* Pods-MMACalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMACalendar.release.xcconfig"; path = "Target Support Files/Pods-MMACalendar/Pods-MMACalendar.release.xcconfig"; sourceTree = "<group>"; };
 		F60C7274226D141300A180A6 /* MMACalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMACalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60C7277226D141300A180A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F60C7279226D141300A180A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3829C7C726DDBDE66F049882 /* Pods_MMACalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1449E38C8E5E08DABEEB277F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3687DF10185048624BEC463 /* Pods_MMACalendar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		962A7C4A15F916596612F1AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAB17C7047A2FA3D1A98AEB1 /* Pods-MMACalendar.debug.xcconfig */,
+				E9EC4B58DEBD6F70A1364035 /* Pods-MMACalendar.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F60C726B226D141300A180A6 = {
 			isa = PBXGroup;
 			children = (
 				F60C7276226D141300A180A6 /* MMACalendar */,
 				F60C7275226D141300A180A6 /* Products */,
+				962A7C4A15F916596612F1AC /* Pods */,
+				1449E38C8E5E08DABEEB277F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F60C7286226D141400A180A6 /* Build configuration list for PBXNativeTarget "MMACalendar" */;
 			buildPhases = (
+				F6F1303F0F9BB8877A54ACE0 /* [CP] Check Pods Manifest.lock */,
 				F60C7270226D141300A180A6 /* Sources */,
 				F60C7271226D141300A180A6 /* Frameworks */,
 				F60C7272226D141300A180A6 /* Resources */,
+				A11BEA6CFBA653ADD39D8D4D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A11BEA6CFBA653ADD39D8D4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MMACalendar/Pods-MMACalendar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MMACalendar/Pods-MMACalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6F1303F0F9BB8877A54ACE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MMACalendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F60C7270226D141300A180A6 /* Sources */ = {
@@ -280,6 +354,7 @@
 		};
 		F60C7287226D141400A180A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAB17C7047A2FA3D1A98AEB1 /* Pods-MMACalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +372,7 @@
 		};
 		F60C7288226D141400A180A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9EC4B58DEBD6F70A1364035 /* Pods-MMACalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
