@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     }
     
     func loadWebpage() {
+        //Scrape web for MMA fight data asynchronously
         DispatchQueue.global(qos: .userInitiated).async {
             if let url = URL(string: "https://www.mmafighting.com/schedule") {
                 do {
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
                     
                     for mmaE in mmaEvents {
                         print(mmaE)
+                        print(mmaE.date)
                     }
                     
                     
