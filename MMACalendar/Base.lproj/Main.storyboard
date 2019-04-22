@@ -73,8 +73,17 @@
                                             <action selector="addEventsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lpV-ai-rFe"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iP8-c3-rkY">
+                                        <rect key="frame" x="0.0" y="438" width="320" height="30"/>
+                                        <state key="normal" title="Remove Events from Calendar">
+                                            <color key="titleColor" red="0.89813512563705444" green="0.11705754659537397" blue="0.068909553035182813" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="removeEventsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEN-3A-seQ"/>
+                                        </connections>
+                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Status" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qRK-RV-xqG">
-                                        <rect key="frame" x="0.0" y="438" width="320" height="128"/>
+                                        <rect key="frame" x="0.0" y="488" width="320" height="78"/>
                                         <color key="backgroundColor" red="0.32208877800000002" green="0.31609678270000002" blue="0.37647825480000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

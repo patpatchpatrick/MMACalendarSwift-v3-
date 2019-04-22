@@ -66,12 +66,20 @@ func addEventsToCalendar(mmaEvents: [MMAEvent], to calendarTitle: String, viewCo
                 event.startDate = startDate
                 event.endDate = endDate
                 event.notes = mmaEvent.description
+               
                 
                 
                 
                 
                 do {
                     try eventStore.save(event, span: .thisEvent)
+                    let id = event.eventIdentifier ?? "NO ID"
+                    let preferences = UserDefaults.standard
+                    let currentLevelKey = mmaEvent.key
+                    let currentLevel = preferences.set(id, forKey: currentLevelKey)
+                    //  Save to disk
+                    let didSave = preferences.synchronize()
+
                     statusString.append("\n" + event.title)
                 }
                 catch {
@@ -87,6 +95,49 @@ func addEventsToCalendar(mmaEvents: [MMAEvent], to calendarTitle: String, viewCo
         viewController.updateStatusLabelText(to: statusString)
     }
 
+}
+
+func removeEventsFromCalendar(mmaEvents: [MMAEvent], to calendarTitle: String, viewController: ViewController){
+    let calendars = eventStore.calendars(for: .event)
+    var statusString = "Events Removed: "
+    for calendar in calendars {
+        if calendar.title == calendarTitle {
+            for mmaEvent in mmaEvents {
+                
+                let key = mmaEvent.key
+                
+                do {
+                    var eventID = ""
+                    let preferences = UserDefaults.standard
+                    if preferences.object(forKey: key) == nil {
+                        print("Pref Key Missing for Event")
+                    } else {
+                        eventID = preferences.string(forKey: key)!
+                    }
+                    
+                    print("EVENT ID" + eventID)
+                    let event = eventStore.event(withIdentifier: eventID)
+                    
+                    if(event != nil){
+                        try eventStore.remove(event!, span: .thisEvent)
+                        statusString.append("\n" + event!.title)
+                    }
+                    
+                    
+                }
+                catch {
+                    statusString.append("Error Removiong Events from Calendar")
+                    print("Error removing events from calendar")             }
+            }
+            
+        }
+    }
+    
+    //Updates to UI must take place on main thread
+    DispatchQueue.main.async {
+        viewController.updateStatusLabelText(to: statusString)
+    }
+    
 }
 
 

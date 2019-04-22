@@ -12,8 +12,16 @@ class MMAEvent: CustomStringConvertible {
     //Object representing an MMA event
     //MMA events will be added to user's calendar
     var description: String {return "Title: " + title + "Details: " + details}
+    //Key used to store MMA Event IDs in shared preferences so they events can be updated/deleted
+    var key: String { if title.count > 7 {
+        return String(title.prefix(7)) + keyDate
+    } else {
+        return title + keyDate
+        }
+    }
     
     var title: String = ""
+    var keyDate: String = ""
     var date: Date = Date(timeIntervalSince1970: 0)
     var details: String = ""
     
@@ -25,6 +33,7 @@ class MMAEvent: CustomStringConvertible {
         //Function to add calendar date for event based on input String (scraped from the web)
         //Date strings from the web are in format "June 6, 2019"
         //Dates are converted from string format to a Date object
+        keyDate = date!
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "MM-dd-yyyy'T'HH:mm:ssZZZZZ"

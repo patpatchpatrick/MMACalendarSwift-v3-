@@ -41,6 +41,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     
+    @IBAction func removeEventsButtonPressed(_ sender: UIButton) {
+        loadEventsFromNetAndRemoveFromCalendar(calendarTitle: selectedCalendarTitle, viewController: self)
+    }
+    
+    
     @IBOutlet weak var statusText: UITextView!
     
     @IBOutlet weak var calendarPicker: UIPickerView!
