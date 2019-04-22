@@ -13,6 +13,7 @@
 		F60C727D226D141300A180A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60C727B226D141300A180A6 /* Main.storyboard */; };
 		F60C727F226D141400A180A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60C727E226D141400A180A6 /* Assets.xcassets */; };
 		F60C7282226D141400A180A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60C7280226D141400A180A6 /* LaunchScreen.storyboard */; };
+		F60EBF3B226D37AD00513A1E /* MMAEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60EBF3A226D37AD00513A1E /* MMAEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F60C727E226D141400A180A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60C7281226D141400A180A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60C7283226D141400A180A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F60EBF3A226D37AD00513A1E /* MMAEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMAEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,6 @@
 				CAB17C7047A2FA3D1A98AEB1 /* Pods-MMACalendar.debug.xcconfig */,
 				E9EC4B58DEBD6F70A1364035 /* Pods-MMACalendar.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,6 +86,7 @@
 				F60C727E226D141400A180A6 /* Assets.xcassets */,
 				F60C7280226D141400A180A6 /* LaunchScreen.storyboard */,
 				F60C7283226D141400A180A6 /* Info.plist */,
+				F60EBF3A226D37AD00513A1E /* MMAEvent.swift */,
 			);
 			path = MMACalendar;
 			sourceTree = "<group>";
@@ -209,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60EBF3B226D37AD00513A1E /* MMAEvent.swift in Sources */,
 				F60C727A226D141300A180A6 /* ViewController.swift in Sources */,
 				F60C7278226D141300A180A6 /* AppDelegate.swift in Sources */,
 			);

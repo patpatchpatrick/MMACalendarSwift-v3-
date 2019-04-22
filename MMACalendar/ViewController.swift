@@ -24,21 +24,30 @@ class ViewController: UIViewController {
                     let contents = try String(contentsOf: url)
                     let html = contents
                     let doc: Document = try SwiftSoup.parse(html)
-                    let h3: Array<Element> = try doc.select("h3").array()
-                    let fights: Array<Element> = try doc.select("a").array()
-                    for fight in fights{
-                        let title = try fight.text()
-                        let href = try fight.attr("href")
+                    let dates: Array<Element> = try doc.select("h3").array()
+                    var dateIterator: IndexingIterator<Array<Element>> = dates.makeIterator()
+                    let events: Array<Element> = try doc.select("a").array()
+                    var mmaEvents = [MMAEvent] ()
+                    for event in events{
+                        let title = try event.text()
+                        let href = try event.attr("href")
                         if title != nil && href != nil && href.contains("fight-card") {
-                            print("Event Name" + title)
-                        
+                            let mmaEvent = MMAEvent(title: title)
+                            mmaEvents.append(mmaEvent)
+                            let date = dateIterator.next()
+                            if date != nil {
+                                mmaEvent.addDate(date: try date?.text())
+                            }
                         } else if title != nil && href != nil && href.contains("/fight/") {
-                            print("Fight Data " + title)
+                            mmaEvents[mmaEvents.count - 1].addDetails(details: title)
                         }
                     }
-                    for date in h3 {
-                        print(date)
+                    
+                    for mmaE in mmaEvents {
+                        print(mmaE)
                     }
+                    
+                    
                 } catch {
                     // contents could not be loaded
                 }
