@@ -19,41 +19,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c6T-eY-Kg5">
-                                <rect key="frame" x="118" y="194" width="178" height="132"/>
+                                <rect key="frame" x="47" y="194" width="320" height="566"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="bD5-ko-XBM">
-                                        <rect key="frame" x="0.0" y="0.0" width="178" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UFC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-NN-sdv">
-                                                <rect key="frame" x="0.0" y="0.0" width="85" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UFC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-NN-sdv">
+                                                <rect key="frame" x="0.0" y="0.0" width="227" height="31"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zeq-R7-Okn">
-                                                <rect key="frame" x="129" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="271" y="0.0" width="51" height="31"/>
                                                 <color key="onTintColor" red="0.95734935998916626" green="0.70869749784469604" blue="0.24689221382141113" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="ocY-sb-M6w">
-                                        <rect key="frame" x="0.0" y="51" width="178" height="31"/>
+                                        <rect key="frame" x="0.0" y="51" width="320" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bellator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv3-IM-qhl">
-                                                <rect key="frame" x="0.0" y="0.0" width="85" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bellator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv3-IM-qhl">
+                                                <rect key="frame" x="0.0" y="0.0" width="227" height="31"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ScA-JX-GfF">
-                                                <rect key="frame" x="129" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="271" y="0.0" width="51" height="31"/>
                                                 <color key="onTintColor" red="0.95734936000000004" green="0.70869749780000002" blue="0.24689221380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </switch>
                                         </subviews>
                                         <viewLayoutGuide key="safeArea" id="5fq-te-Pci"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bed-JK-8kX">
-                                        <rect key="frame" x="0.0" y="102" width="178" height="30"/>
+                                        <rect key="frame" x="0.0" y="102" width="320" height="30"/>
                                         <state key="normal" title="Choose Calendar">
                                             <color key="titleColor" red="0.94562381505966187" green="0.70078861713409424" blue="0.24297180771827698" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -61,6 +61,25 @@
                                             <action selector="chooseCalendarButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="grI-dx-VzK"/>
                                         </connections>
                                     </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwV-Rt-bIY">
+                                        <rect key="frame" x="0.0" y="152" width="320" height="216"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-Mm-xUX">
+                                        <rect key="frame" x="0.0" y="388" width="320" height="30"/>
+                                        <state key="normal" title="Add/Update Events in Calendar">
+                                            <color key="titleColor" red="0.95344299077987671" green="0.70869439840316772" blue="0.24689263105392456" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addEventsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lpV-ai-rFe"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Status" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qRK-RV-xqG">
+                                        <rect key="frame" x="0.0" y="438" width="320" height="128"/>
+                                        <color key="backgroundColor" red="0.32208877800000002" green="0.31609678270000002" blue="0.37647825480000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="WY1-rf-sh1">
@@ -70,24 +89,23 @@
                                     <constraint firstAttribute="height" constant="100" id="mZe-H5-Oco"/>
                                 </constraints>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwV-Rt-bIY">
-                                <rect key="frame" x="0.0" y="334" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.32208877801895142" green="0.31609678268432617" blue="0.37647825479507446" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="c6T-eY-Kg5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CKQ-Up-n0G"/>
                             <constraint firstItem="c6T-eY-Kg5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="CPH-Sf-KdL"/>
                             <constraint firstItem="c6T-eY-Kg5" firstAttribute="top" secondItem="WY1-rf-sh1" secondAttribute="bottom" constant="50" id="G6E-nY-E6Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c6T-eY-Kg5" secondAttribute="bottom" constant="102" id="Hk5-ap-D5v"/>
                             <constraint firstItem="WY1-rf-sh1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sFM-bF-cyP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addEventsToCalendarButton" destination="ubz-Mm-xUX" id="7kk-fg-3W4"/>
                         <outlet property="bellatorSwitch" destination="ScA-JX-GfF" id="p0O-Vg-LRq"/>
                         <outlet property="calendarPicker" destination="wwV-Rt-bIY" id="XQ8-Qw-dWT"/>
                         <outlet property="chooseCalendarButton" destination="bed-JK-8kX" id="88x-Qq-FNl"/>
+                        <outlet property="statusText" destination="qRK-RV-xqG" id="mH7-ug-NDn"/>
                         <outlet property="ufcSwitch" destination="Zeq-R7-Okn" id="Obd-As-1Vh"/>
                     </connections>
                 </viewController>

@@ -10,7 +10,7 @@ import Foundation
 import SwiftSoup
 import Dispatch
 
-func loadWebpage() {
+func loadEventsFromNetAndAddToCalendar(calendarTitle: String, viewController: ViewController) {
     //Scrape web for MMA fight data asynchronously
     DispatchQueue.global(qos: .userInitiated).async {
         if let url = URL(string: "https://www.mmafighting.com/schedule") {
@@ -37,11 +37,7 @@ func loadWebpage() {
                     }
                 }
                 
-                for mmaE in mmaEvents {
-                    print(mmaE)
-                    print(mmaE.date)
-                }
-                
+                addEventsToCalendar(mmaEvents: mmaEvents, to: calendarTitle, viewController: viewController)
                 
             } catch {
                 // contents could not be loaded

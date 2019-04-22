@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import EventKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var calendarList = [String]()
+    var selectedCalendarTitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.calendarPicker.delegate = self
         self.calendarPicker.dataSource = self
-        loadWebpage()
     }
     
     @IBOutlet weak var ufcSwitch: UISwitch!
@@ -30,6 +31,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func chooseCalendarButtonPressed(_ sender: Any) {
         initializeEventStore(viewController: self)
     }
+    
+    
+    @IBOutlet weak var addEventsToCalendarButton: UIButton!
+    
+    
+    @IBAction func addEventsButtonPressed(_ sender: UIButton) {
+        loadEventsFromNetAndAddToCalendar(calendarTitle: selectedCalendarTitle, viewController: self)
+    }
+    
+    
+    @IBOutlet weak var statusText: UITextView!
     
     @IBOutlet weak var calendarPicker: UIPickerView!
     
@@ -50,6 +62,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        selectedCalendarTitle = calendarList[row]
         chooseCalendarButton.setTitle(calendarList[row], for: .normal)
         self.calendarPicker.isHidden = true
     }
@@ -58,6 +71,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.calendarList = calendarList
         self.calendarPicker.reloadAllComponents()
         self.calendarPicker.isHidden = false
+    }
+    
+    func updateStatusLabelText(to value: String){
+        statusText.text = value
     }
     
     

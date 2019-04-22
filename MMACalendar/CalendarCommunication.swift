@@ -9,10 +9,12 @@
 import Foundation
 import EventKit
 import UIKit
+import Dispatch
+
+var eventStore: EKEventStore = EKEventStore()
 
 func initializeEventStore(viewController: ViewController) {
     
-    let eventStore = EKEventStore()
     switch EKEventStore.authorizationStatus(for: .event) {
     case .authorized:
         queryCalendars(store: eventStore, viewController: viewController)
@@ -29,16 +31,62 @@ func initializeEventStore(viewController: ViewController) {
     default:
         print("Default")
         
-}
+    }
 }
 
 func queryCalendars(store: EKEventStore, viewController: ViewController){
     let calendars = store.calendars(for: .event)
-    var calendarNames = [String]()
+    var calendarList = [String]()
     for calendar in calendars {
-        calendarNames.append(calendar.title)
+        calendarList.append(calendar.title)
     }
-    viewController.updateCalendarData(calendarList: calendarNames)
     
- 
+    
+    //Updates to UI must take place on main thread
+    DispatchQueue.main.async {
+         viewController.updateCalendarData(calendarList: calendarList)
+    }    
+    
 }
+
+func addEventsToCalendar(mmaEvents: [MMAEvent], to calendarTitle: String, viewController: ViewController){
+    let calendars = eventStore.calendars(for: .event)
+    var statusString = "Events Added/Updated: "
+    for calendar in calendars {
+        if calendar.title == calendarTitle {
+            for mmaEvent in mmaEvents {
+                
+                let startDate = mmaEvent.date
+                let endDate = startDate.addingTimeInterval(3 * 60 * 60)
+                
+                let event = EKEvent(eventStore: eventStore)
+                event.calendar = calendar
+                
+                event.title = mmaEvent.title
+                event.startDate = startDate
+                event.endDate = endDate
+                event.notes = mmaEvent.description
+                
+                
+                
+                
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                    statusString.append("\n" + event.title)
+                }
+                catch {
+                    statusString.append("Error Saving Events to Calendar")
+                    print("Error saving event in calendar")             }
+            }
+            
+        }
+    }
+    
+    //Updates to UI must take place on main thread
+    DispatchQueue.main.async {
+        viewController.updateStatusLabelText(to: statusString)
+    }
+
+}
+
+
