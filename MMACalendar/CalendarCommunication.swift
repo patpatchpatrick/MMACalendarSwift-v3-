@@ -8,19 +8,20 @@
 
 import Foundation
 import EventKit
+import UIKit
 
-func initializeEventStore() {
+func initializeEventStore(viewController: ViewController) {
     
     let eventStore = EKEventStore()
     switch EKEventStore.authorizationStatus(for: .event) {
     case .authorized:
-        queryCalendars(store: eventStore)
+        queryCalendars(store: eventStore, viewController: viewController)
     case .denied:
         print("Denied")
     case .notDetermined:
         eventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (granted) && (error == nil) {
-                queryCalendars(store: eventStore)
+                queryCalendars(store: eventStore, viewController: viewController)
             } else {
                 // Do something else (show an alert)
             }
@@ -31,7 +32,13 @@ func initializeEventStore() {
 }
 }
 
-func queryCalendars(store: EKEventStore){
+func queryCalendars(store: EKEventStore, viewController: ViewController){
     let calendars = store.calendars(for: .event)
-    print(calendars)
+    var calendarNames = [String]()
+    for calendar in calendars {
+        calendarNames.append(calendar.title)
+    }
+    viewController.updateCalendarData(calendarList: calendarNames)
+    
+ 
 }

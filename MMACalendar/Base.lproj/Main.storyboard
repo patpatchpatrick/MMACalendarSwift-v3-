@@ -55,10 +55,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bed-JK-8kX">
                                         <rect key="frame" x="0.0" y="102" width="178" height="30"/>
                                         <state key="normal" title="Choose Calendar">
-                                            <color key="titleColor" red="0.76194590330123901" green="0.56622433662414551" blue="0.19594836235046387" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" red="0.94562381505966187" green="0.70078861713409424" blue="0.24297180771827698" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="chooseCalendarButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e8e-9y-icL"/>
+                                            <action selector="chooseCalendarButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="grI-dx-VzK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -70,6 +70,10 @@
                                     <constraint firstAttribute="height" constant="100" id="mZe-H5-Oco"/>
                                 </constraints>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwV-Rt-bIY">
+                                <rect key="frame" x="0.0" y="334" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.32208877801895142" green="0.31609678268432617" blue="0.37647825479507446" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -80,10 +84,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bellatorSwitch" destination="ScA-JX-GfF" id="p0O-Vg-LRq"/>
+                        <outlet property="calendarPicker" destination="wwV-Rt-bIY" id="XQ8-Qw-dWT"/>
+                        <outlet property="chooseCalendarButton" destination="bed-JK-8kX" id="88x-Qq-FNl"/>
+                        <outlet property="ufcSwitch" destination="Zeq-R7-Okn" id="Obd-As-1Vh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95.652173913043484" y="24.776785714285712"/>
         </scene>
     </scenes>
     <resources>
