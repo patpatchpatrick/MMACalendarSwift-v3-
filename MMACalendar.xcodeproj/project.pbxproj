@@ -14,6 +14,8 @@
 		F60C727F226D141400A180A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60C727E226D141400A180A6 /* Assets.xcassets */; };
 		F60C7282226D141400A180A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60C7280226D141400A180A6 /* LaunchScreen.storyboard */; };
 		F60EBF3B226D37AD00513A1E /* MMAEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60EBF3A226D37AD00513A1E /* MMAEvent.swift */; };
+		F60EBF3D226D74D800513A1E /* NetworkCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60EBF3C226D74D800513A1E /* NetworkCommunication.swift */; };
+		F66D24A5226E2F4300FCDFD7 /* CalendarCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D24A4226E2F4300FCDFD7 /* CalendarCommunication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		F60C7281226D141400A180A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60C7283226D141400A180A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F60EBF3A226D37AD00513A1E /* MMAEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMAEvent.swift; sourceTree = "<group>"; };
+		F60EBF3C226D74D800513A1E /* NetworkCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCommunication.swift; sourceTree = "<group>"; };
+		F66D24A4226E2F4300FCDFD7 /* CalendarCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCommunication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				F60C7280226D141400A180A6 /* LaunchScreen.storyboard */,
 				F60C7283226D141400A180A6 /* Info.plist */,
 				F60EBF3A226D37AD00513A1E /* MMAEvent.swift */,
+				F60EBF3C226D74D800513A1E /* NetworkCommunication.swift */,
+				F66D24A4226E2F4300FCDFD7 /* CalendarCommunication.swift */,
 			);
 			path = MMACalendar;
 			sourceTree = "<group>";
@@ -212,8 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F60EBF3B226D37AD00513A1E /* MMAEvent.swift in Sources */,
+				F60EBF3D226D74D800513A1E /* NetworkCommunication.swift in Sources */,
 				F60C727A226D141300A180A6 /* ViewController.swift in Sources */,
 				F60C7278226D141300A180A6 /* AppDelegate.swift in Sources */,
+				F66D24A5226E2F4300FCDFD7 /* CalendarCommunication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

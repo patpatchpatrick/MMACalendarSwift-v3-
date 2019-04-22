@@ -9,6 +9,8 @@
 import Foundation
 
 class MMAEvent: CustomStringConvertible {
+    //Object representing an MMA event
+    //MMA events will be added to user's calendar
     var description: String {return "Title: " + title + "Details: " + details}
     
     var title: String = ""
@@ -20,6 +22,9 @@ class MMAEvent: CustomStringConvertible {
     }
     
     func addDate(date: String?){
+        //Function to add calendar date for event based on input String (scraped from the web)
+        //Date strings from the web are in format "June 6, 2019"
+        //Dates are converted from string format to a Date object
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "MM-dd-yyyy'T'HH:mm:ssZZZZZ"
@@ -70,6 +75,7 @@ class MMAEvent: CustomStringConvertible {
     }
     
     func addDetails(details: String?){
+        //Add details to MMA calendar event (typically this is fight/matchup information)
         self.details += "\n" + details!
     }
 }
