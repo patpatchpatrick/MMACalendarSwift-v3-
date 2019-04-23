@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,44 +15,44 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MMACalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c6T-eY-Kg5">
-                                <rect key="frame" x="47" y="194" width="320" height="566"/>
+                                <rect key="frame" x="27.5" y="170" width="320" height="395"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="bD5-ko-XBM">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="bD5-ko-XBM">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UFC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-NN-sdv">
-                                                <rect key="frame" x="0.0" y="0.0" width="227" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UFC" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-NN-sdv">
+                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="31"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zeq-R7-Okn">
-                                                <rect key="frame" x="271" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="197.5" y="0.0" width="124.5" height="31"/>
                                                 <color key="onTintColor" red="0.95734935998916626" green="0.70869749784469604" blue="0.24689221382141113" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="ocY-sb-M6w">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="ocY-sb-M6w">
                                         <rect key="frame" x="0.0" y="51" width="320" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bellator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv3-IM-qhl">
-                                                <rect key="frame" x="0.0" y="0.0" width="227" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bellator" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv3-IM-qhl">
+                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="31"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ScA-JX-GfF">
-                                                <rect key="frame" x="271" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="197.5" y="0.0" width="124.5" height="31"/>
                                                 <color key="onTintColor" red="0.95734936000000004" green="0.70869749780000002" blue="0.24689221380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </switch>
                                         </subviews>
                                         <viewLayoutGuide key="safeArea" id="5fq-te-Pci"/>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bed-JK-8kX">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bed-JK-8kX">
                                         <rect key="frame" x="0.0" y="102" width="320" height="30"/>
                                         <state key="normal" title="Choose Calendar">
                                             <color key="titleColor" red="0.94562381505966187" green="0.70078861713409424" blue="0.24297180771827698" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -61,11 +61,11 @@
                                             <action selector="chooseCalendarButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="grI-dx-VzK"/>
                                         </connections>
                                     </button>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwV-Rt-bIY">
-                                        <rect key="frame" x="0.0" y="152" width="320" height="216"/>
+                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwV-Rt-bIY">
+                                        <rect key="frame" x="0.0" y="152" width="320" height="183"/>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-Mm-xUX">
-                                        <rect key="frame" x="0.0" y="388" width="320" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-Mm-xUX">
+                                        <rect key="frame" x="0.0" y="355" width="320" height="0.0"/>
                                         <state key="normal" title="Add/Update Events in Calendar">
                                             <color key="titleColor" red="0.95344299077987671" green="0.70869439840316772" blue="0.24689263105392456" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -73,8 +73,8 @@
                                             <action selector="addEventsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lpV-ai-rFe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iP8-c3-rkY">
-                                        <rect key="frame" x="0.0" y="438" width="320" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iP8-c3-rkY">
+                                        <rect key="frame" x="0.0" y="375" width="320" height="0.0"/>
                                         <state key="normal" title="Remove Events from Calendar">
                                             <color key="titleColor" red="0.89813512563705444" green="0.11705754659537397" blue="0.068909553035182813" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -82,8 +82,8 @@
                                             <action selector="removeEventsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEN-3A-seQ"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Status" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qRK-RV-xqG">
-                                        <rect key="frame" x="0.0" y="488" width="320" height="78"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qRK-RV-xqG">
+                                        <rect key="frame" x="0.0" y="395" width="320" height="0.0"/>
                                         <color key="backgroundColor" red="0.32208877800000002" green="0.31609678270000002" blue="0.37647825480000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -92,7 +92,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="WY1-rf-sh1">
-                                <rect key="frame" x="107" y="44" width="200" height="100"/>
+                                <rect key="frame" x="87.5" y="10" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Qek-va-cht"/>
                                     <constraint firstAttribute="height" constant="100" id="mZe-H5-Oco"/>
@@ -103,7 +103,7 @@
                         <constraints>
                             <constraint firstItem="c6T-eY-Kg5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CKQ-Up-n0G"/>
                             <constraint firstItem="c6T-eY-Kg5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="CPH-Sf-KdL"/>
-                            <constraint firstItem="c6T-eY-Kg5" firstAttribute="top" secondItem="WY1-rf-sh1" secondAttribute="bottom" constant="50" id="G6E-nY-E6Q"/>
+                            <constraint firstItem="c6T-eY-Kg5" firstAttribute="top" secondItem="WY1-rf-sh1" secondAttribute="bottom" constant="60" id="G6E-nY-E6Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c6T-eY-Kg5" secondAttribute="bottom" constant="102" id="Hk5-ap-D5v"/>
                             <constraint firstItem="WY1-rf-sh1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sFM-bF-cyP"/>
                         </constraints>

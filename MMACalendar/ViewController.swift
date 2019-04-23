@@ -37,12 +37,24 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     @IBAction func addEventsButtonPressed(_ sender: UIButton) {
-        loadEventsFromNetAndAddToCalendar(calendarTitle: selectedCalendarTitle, viewController: self)
+        if ufcSwitch.isOn {
+            loadEventsFromNetAndAddToCalendar(calendarTitle: selectedCalendarTitle, viewController: self, eventType: "ufc")
+        }
+        if bellatorSwitch.isOn {
+            loadEventsFromNetAndAddToCalendar(calendarTitle: selectedCalendarTitle, viewController: self, eventType: "bellator")
+        }
+        
     }
     
     
     @IBAction func removeEventsButtonPressed(_ sender: UIButton) {
-        loadEventsFromNetAndRemoveFromCalendar(calendarTitle: selectedCalendarTitle, viewController: self)
+        if ufcSwitch.isOn {
+            loadEventsFromNetAndRemoveFromCalendar(calendarTitle: selectedCalendarTitle, viewController: self, eventType: "ufc")
+        }
+        if bellatorSwitch.isOn {
+            loadEventsFromNetAndRemoveFromCalendar(calendarTitle: selectedCalendarTitle, viewController: self, eventType: "bellator")
+        }
+        
     }
     
     

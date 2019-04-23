@@ -10,11 +10,16 @@ import Foundation
 import SwiftSoup
 import Dispatch
 
-func loadEventsFromNetAndAddToCalendar(calendarTitle: String, viewController: ViewController) {
+func loadEventsFromNetAndAddToCalendar(calendarTitle: String, viewController: ViewController, eventType: String) {
     //Scrape web for MMA fight data asynchronously
     //After fight data is collected, add the fights to the user's calendar
+
+    //The type of event is appended to the URL String.
+    // E.g. for UFC events the URL mmafighting.com/schedule/ufc would be visited
+    var urlString = "https://www.mmafighting.com/schedule/"
+    urlString.append(eventType)
     DispatchQueue.global(qos: .userInitiated).async {
-        if let url = URL(string: "https://www.mmafighting.com/schedule") {
+        if let url = URL(string: urlString) {
             do {
                 let contents = try String(contentsOf: url)
                 let html = contents
@@ -50,11 +55,14 @@ func loadEventsFromNetAndAddToCalendar(calendarTitle: String, viewController: Vi
     
 }
 
-func loadEventsFromNetAndRemoveFromCalendar(calendarTitle: String, viewController: ViewController) {
+func loadEventsFromNetAndRemoveFromCalendar(calendarTitle: String, viewController: ViewController, eventType: String) {
     //Scrape web for MMA fight data asynchronously
     //After fight data is collected, remove the fights from the user's calendar
+    
+    var urlString = "https://www.mmafighting.com/schedule/"
+    urlString.append(eventType)
     DispatchQueue.global(qos: .userInitiated).async {
-        if let url = URL(string: "https://www.mmafighting.com/schedule") {
+        if let url = URL(string: urlString) {
             do {
                 let contents = try String(contentsOf: url)
                 let html = contents
