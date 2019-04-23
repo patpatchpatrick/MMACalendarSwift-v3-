@@ -12,7 +12,7 @@ class MMAEvent: CustomStringConvertible {
     //Object representing an MMA event
     //MMA events will be added to user's calendar
     var description: String {return "Title: " + title + "Details: " + details}
-    //Key used to store MMA Event IDs in shared preferences so they events can be updated/deleted
+    //Key used to store MMA Event IDs in shared preferences so the events can be updated/deleted
     var key: String { if title.count > 7 {
         return String(title.prefix(7)) + keyDate
     } else {

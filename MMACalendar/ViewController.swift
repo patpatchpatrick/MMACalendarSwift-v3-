@@ -72,12 +72,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.calendarPicker.isHidden = true
     }
     
+    //Update calendar data to user's list of calendar's when the 'Select Calendar' button is pressed
     func updateCalendarData(calendarList: [String]){
         self.calendarList = calendarList
         self.calendarPicker.reloadAllComponents()
         self.calendarPicker.isHidden = false
     }
     
+    //Updates the text of the status label.  The status label is a textView that shows the status of the addition/removal of events from the calendar
     func updateStatusLabelText(to value: String){
         statusText.text = value
     }

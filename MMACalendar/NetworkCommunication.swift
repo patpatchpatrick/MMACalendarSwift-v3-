@@ -12,6 +12,7 @@ import Dispatch
 
 func loadEventsFromNetAndAddToCalendar(calendarTitle: String, viewController: ViewController) {
     //Scrape web for MMA fight data asynchronously
+    //After fight data is collected, add the fights to the user's calendar
     DispatchQueue.global(qos: .userInitiated).async {
         if let url = URL(string: "https://www.mmafighting.com/schedule") {
             do {
@@ -37,13 +38,13 @@ func loadEventsFromNetAndAddToCalendar(calendarTitle: String, viewController: Vi
                     }
                 }
                 
-                addEventsToCalendar(mmaEvents: mmaEvents, to: calendarTitle, viewController: viewController)
+                addOrUpdateEventsInCalendar(mmaEvents: mmaEvents, to: calendarTitle, viewController: viewController)
                 
             } catch {
                 // contents could not be loaded
             }
         } else {
-            // the URL was bad!
+            // the URL was bad
         }
     }
     
@@ -51,6 +52,7 @@ func loadEventsFromNetAndAddToCalendar(calendarTitle: String, viewController: Vi
 
 func loadEventsFromNetAndRemoveFromCalendar(calendarTitle: String, viewController: ViewController) {
     //Scrape web for MMA fight data asynchronously
+    //After fight data is collected, remove the fights from the user's calendar
     DispatchQueue.global(qos: .userInitiated).async {
         if let url = URL(string: "https://www.mmafighting.com/schedule") {
             do {
@@ -82,7 +84,7 @@ func loadEventsFromNetAndRemoveFromCalendar(calendarTitle: String, viewControlle
                 // contents could not be loaded
             }
         } else {
-            // the URL was bad!
+            // the URL was bad
         }
     }
     
