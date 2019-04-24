@@ -37,6 +37,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     @IBAction func addEventsButtonPressed(_ sender: UIButton) {
+        //Clear the status text
+        statusText.text = ""
         if ufcSwitch.isOn {
             loadEventsFromNetAndAddToCalendar(calendarTitle: selectedCalendarTitle, viewController: self, eventType: "ufc")
         }
@@ -48,6 +50,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     @IBAction func removeEventsButtonPressed(_ sender: UIButton) {
+        //Clear the status text
+        statusText.text = ""
         if ufcSwitch.isOn {
             loadEventsFromNetAndRemoveFromCalendar(calendarTitle: selectedCalendarTitle, viewController: self, eventType: "ufc")
         }
@@ -92,9 +96,32 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     //Updates the text of the status label.  The status label is a textView that shows the status of the addition/removal of events from the calendar
-    func updateStatusLabelText(to value: String){
-        statusText.text = value
+    func appendStatusLabelText(with value: String){
+        statusText.text.append(value)
     }
+    
+    func showAlert(display message:String){
+        
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     
     
 }

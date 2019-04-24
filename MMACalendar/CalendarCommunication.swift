@@ -14,17 +14,19 @@ import Dispatch
 //Class to control communication with device calendar
 
 var eventStore: EKEventStore = EKEventStore()
+var mainViewController: ViewController = ViewController()
 
 
 func initializeEventStore(viewController: ViewController) {
 
     //Initialize the event store and request access to device calendar
     // if access is not currently granted
+    mainViewController = viewController
     switch EKEventStore.authorizationStatus(for: .event) {
     case .authorized:
         queryCalendars(store: eventStore, viewController: viewController)
     case .denied:
-        print("Denied")
+        mainViewController.showAlert(display: "Calendar Access Denied.\nGo to App Settings and Enable Calendar Access.")
     case .notDetermined:
         eventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (granted) && (error == nil) {
@@ -47,7 +49,11 @@ func queryCalendars(store: EKEventStore, viewController: ViewController){
     let calendars = store.calendars(for: .event)
     var calendarList = [String]()
     for calendar in calendars {
-        calendarList.append(calendar.title)
+        //Add calendar to UIPicker only if it is allowed to be modified
+        if calendar.allowsContentModifications {
+                calendarList.append(calendar.title)
+        }
+        
     }
     
     
@@ -91,11 +97,13 @@ func addOrUpdateEventsInCalendar(mmaEvents: [MMAEvent], to calendarTitle: String
         }
     }
     
+    statusString.append("\n\n")
+    
     //Updates to UI must take place on main thread
     //Update the main UI to show the status
     //The status will either be a list of events added/updated successfully or an error message
     DispatchQueue.main.async {
-        viewController.updateStatusLabelText(to: statusString)
+        viewController.appendStatusLabelText(with: statusString)
     }
 
 }
@@ -208,11 +216,13 @@ func removeEventsFromCalendar(mmaEvents: [MMAEvent], to calendarTitle: String, v
         }
     }
     
+    statusString.append("\n\n")
+    
     //Updates to UI must take place on main thread
     //Update the main UI to show the status
     //The status will either be a list of events removed successfully or an error message
     DispatchQueue.main.async {
-        viewController.updateStatusLabelText(to: statusString)
+        viewController.appendStatusLabelText(with: statusString)
     }
     
 }
